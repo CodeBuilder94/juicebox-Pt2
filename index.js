@@ -4,6 +4,11 @@ const express = require('express');
 const apiRouter = require('./api');
 const server = express();
 
+const morgan = require('morgan');
+server.use(morgan('dev'));
+
+server.use(express.json())
+
 server.use((req, res, next) => {
   console.log("<____Body Logger START____>");
   console.log(req.body);
