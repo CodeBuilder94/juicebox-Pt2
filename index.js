@@ -1,4 +1,7 @@
 // inside index.js
+
+require('dotenv').config();
+
 const PORT = 3000;
 const express = require('express');
 const apiRouter = require('./api');
