@@ -2,6 +2,8 @@
 const PORT = 3000;
 const express = require('express');
 const apiRouter = require('./api');
+const {client} = require('./db');
+client.connect();
 const server = express();
 
 const morgan = require('morgan');
