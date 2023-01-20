@@ -18,8 +18,7 @@ postsRouter.get("/", async (req,res)=>{
 });
 
 postsRouter.post("/", requireUser, async (req, res, next) =>{
-    res.send({authorId, title, content, tags = ""} = req.body);
-
+    const {authorId, title, content, tags = ""} = req.body;
     const tagArr = tags.trim().split(/\s+/);
     const postData = {};
 
@@ -28,7 +27,7 @@ postsRouter.post("/", requireUser, async (req, res, next) =>{
     {
         postData.tags = tagArr;
     }
-    
+
     try{
         postData.authorId = authorId;
         postData.title = title;
